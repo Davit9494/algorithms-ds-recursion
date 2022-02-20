@@ -1,4 +1,6 @@
 "use strict";
+//Given an array of numbers. Write a recursive function to find its minimal positive
+//element. (if such element does not exist, return -1).
 function minPositive(arr, min) {
   if (min === undefined) min = Infinity;
   if (arr[0] < min && arr[0] >= 0) {
