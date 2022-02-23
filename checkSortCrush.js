@@ -1,18 +1,27 @@
 "use strict";
 //Given an array of numbers which is almost sorted in ascending order. Find the index
 //where sorting order is violated.
-function sortCheck(arr, index) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > arr[i + 1]) {
-      index = i;
-      return index + 1;
-    } else {
-      index = -1;
-    }
+// function sortCheck(arr, index) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] > arr[i + 1]) {
+//       index = i;
+//       return index + 1;
+//     } else {
+//       index = -1;
+//     }
+//   }
+//   return index;
+// }
+//with recursion
+function sortCheck(arr, index = 0) {
+  if (index + 1 === arr.length) {
+    return -1;
   }
-  return index;
+  if (arr[index] > arr[index + 1]) {
+    return index + 1;
+  }
+  return sortCheck(arr, ++index);
 }
-
 console.log(sortCheck([10, 15, 2, 6]));
 console.log(sortCheck([10, 15, 20, 333]));
 console.log(sortCheck([10, 15, 44, 63, 2, 5]));
