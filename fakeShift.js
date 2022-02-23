@@ -14,3 +14,5 @@ function fakeShift(arr, index = 1, newArr) {
 }
 
 console.log(fakeShift([6, 78, "n", 0, 1]));
+console.log(fakeShift([6]));
+console.log(fakeShift([]));
